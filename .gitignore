@@ -132,8 +132,8 @@ dmypy.json
 
 # Project specific
 # Large model files - training outputs
-models/
-results/
+# models/
+# results/
 
 # Data files (optional - uncomment if you want to exclude)
 # data/

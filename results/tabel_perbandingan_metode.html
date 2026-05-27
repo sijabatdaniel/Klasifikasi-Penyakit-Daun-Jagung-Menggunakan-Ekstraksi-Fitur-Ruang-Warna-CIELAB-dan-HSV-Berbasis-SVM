@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Perbandingan Metode Ekstraksi Ciri</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .table-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background-color: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+        }
+
+        th {
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #ddd;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            padding: 16px;
+            text-align: center;
+            border-right: 1px solid #eee;
+            font-size: 14px;
+            color: #555;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f0f4ff;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        /* Highlight baris metode terbaik */
+        tbody tr.best-method {
+            background-color: #e3f2fd;
+            border-left: 4px solid #667eea;
+            font-weight: 600;
+        }
+
+        tbody tr.best-method:hover {
+            background-color: #bbdefb;
+        }
+
+        tbody tr.best-method td {
+            color: #1976d2;
+        }
+
+        /* Styling untuk kolom Metode */
+        td:first-child,
+        th:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        /* Styling untuk nilai numerik */
+        .numeric {
+            font-family: 'Courier New', monospace;
+            font-weight: 500;
+        }
+
+        /* Badge untuk highlight terbaik */
+        .best-badge {
+            display: inline-block;
+            background-color: #667eea;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            th, td {
+                padding: 12px 8px;
+                font-size: 12px;
+            }
+
+            .table-title {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .best-badge {
+                display: block;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+        }
+
+        /* Footer note */
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .footer-note strong {
+            color: #555;
+        }
+
+        /* Print style */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            tbody tr.best-method {
+                border-left: 4px solid #667eea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table-title">
+            <strong>Tabel 4.2 – Perbandingan Hasil Antar Metode Ekstraksi Ciri</strong>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Metode</th>
+                    <th>Akurasi (%)</th>
+                    <th>F1-Score</th>
+                    <th>Waktu Komputasi (detik)</th>
+                    <th>Dim. Fitur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menggunakan fitur warna CIELAB</td>
+                    <td class="numeric">90.33</td>
+                    <td class="numeric">0.9010</td>
+                    <td class="numeric">1.19</td>
+                    <td class="numeric">54</td>
+                </tr>
+                <tr>
+                    <td>Menggunakan fitur warna HSV</td>
+                    <td class="numeric">92.12</td>
+                    <td class="numeric">0.9211</td>
+                    <td class="numeric">1.35</td>
+                    <td class="numeric">54</td>
+                </tr>
+                <tr class="best-method">
+                    <td>Menggunakan fitur Hybrid CIELAB + HSV <span class="best-badge">✓ Terbaik</span></td>
+                    <td class="numeric">92.72</td>
+                    <td class="numeric">0.9276</td>
+                    <td class="numeric">1.70</td>
+                    <td class="numeric">108</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer-note">
+            <strong>Catatan:</strong> Metode Hybrid CIELAB + HSV menunjukkan performa terbaik dengan akurasi tertinggi (92.72%) 
+            dan F1-Score tertinggi (0.9276). Waktu komputasi yang diperlukan masih sangat cepat (1.70 detik) dan masih terjangkau 
+            meskipun dimensi fitur lebih besar (108 fitur). Hasil ini membuktikan bahwa menggabungkan informasi dari dua color space 
+            yang berbeda memberikan representasi ciri yang lebih kaya dan menghasilkan klasifikasi yang lebih akurat.
+        </div>
+    </div>
+</body>
+</html>
