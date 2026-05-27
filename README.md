@@ -36,7 +36,7 @@ Sistem klasifikasi penyakit daun jagung menggunakan **Hybrid Color Features (CIE
 ## 📊 Dataset
 
 Dataset berisi **4 kelas penyakit daun jagung:**
-Sumber : **https://www.kaggle.com/datasets/andril22/daun-jagung-dataset/data?select=data**
+- Sumber : **https://www.kaggle.com/datasets/andril22/daun-jagung-dataset/data?select=data**
 
 1. **Blight** - Southern Corn Leaf Blight
 2. **Common Rust** - Common Corn Rust
