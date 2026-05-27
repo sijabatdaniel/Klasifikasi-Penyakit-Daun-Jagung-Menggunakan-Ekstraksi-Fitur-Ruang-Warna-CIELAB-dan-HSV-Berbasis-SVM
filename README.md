@@ -297,6 +297,10 @@ streamlit run sapp.py
 ## 👨‍💻 Author
 
 Tugas Besar Pemrosesan Citra Digital - S1 Informatika
+- Haura Gazeilla Falestin
+- Abdullah Luthfi
+- Karen anggelia pasaribu
+- Daniel Febrian Sijabat
 
 ## 📄 License
 
